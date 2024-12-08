@@ -5,6 +5,8 @@ The Steam Image Sorter is a program that sorts Steam screenshots into folders ba
 It uses the SteamWebAPI2 NuGet package to retrieve game information from the Steam API.
 
 ## Usage
+(you can get a key here: https://steamcommunity.com/dev/apikey) 
+
 This only works with externally saved screenshots, you can view the directory and if you have it enabled here ``Settings -> In-Game -> Scroll down``
 <img src="https://i.imgur.com/n2XaSwK.png">
 
