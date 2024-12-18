@@ -1,17 +1,37 @@
-# SteamImageSorter
+<div align="center">
 
-## Overview
-The Steam Image Sorter is a program that sorts Steam screenshots into folders based on the game they belong to. 
-It uses the SteamWebAPI2 NuGet package to retrieve game information from the Steam API.
+# Steam Screenshot Sorter
+A simple program that sorts your screenshots by game
 
-## Usage
-(you can get a key here: https://steamcommunity.com/dev/apikey) 
+[Installation](#installation) •
+[Technical Details](#-technical-details) •
+[License](#-license) •
+[References](#-references)
+</div>
 
-This only works with externally saved screenshots, you can view the directory and if you have it enabled here ``Settings -> In-Game -> Scroll down``
+## Installation
+Simply download and run the latest release from the [releases page](https://github.com/msh31/SteamScreenshotSorter/releases)
+
+## 📚 Usage
+1. You will need a steam [api key](https://steamcommunity.com/dev/apikey)
+2. Enter it in the program 
+3. Provide the directory that contains the **external** screenshots you captured using the steam overlay
+
+You can view the directory and if you have it enabled here ``Settings -> In-Game -> Scroll down``
 <img src="https://i.imgur.com/n2XaSwK.png">
 
-## Reporting a bug
-Please describe the issue [here](https://github.com/msh31/SteamImageSorter/issues)
+## 🛠 Technical Details
+Built with modern technologies:
+- .NET 8 & C# 12 \
+and or
+- Python 3.12
 
-### Dependencies
-[SteamWebAPI2](https://www.nuget.org/packages/SteamWebAPI2)
+## ❓ Why did you write it in C# and Python?
+Simply put, I wanted to challenge myself.
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🔗 References
+- [SteamWebAPI2](https://www.nuget.org/packages/SteamWebAPI2)
