@@ -1,7 +1,2 @@
-obj/
-bin/
-tmp/
-config.json
-.idea/
-Folder.DotSettings.user
-move_files_from_subdir.ps1
+*.exe
+.vscode/*
