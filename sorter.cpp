@@ -16,37 +16,37 @@ void Sorter::appIdToName(std::vector<int> ids)
 
 int main() 
 {
-    std::vector<std::string> fileExtensions = { ".jpg", ".jpeg", ".png" };
+    std::vector<std::string> fileExtensions = { ".jpg", ".jpeg", ".png", ".avif" };
     std::vector<int> appIds;
     std::string folderLocation, apiKey, appId;
 
     std::cout << "Enter folder location (or 'q' to exit):";
     std::getline(std::cin, folderLocation);
 
-    if(folderLocation == "q") { return 0; }
-
-    std::cout << "Enter steam API key:";
-    std::getline(std::cin, apiKey);
+    if(folderLocation == "q") {
+        return 0;
+    }
 
     for(const auto& entry : std::filesystem::directory_iterator(folderLocation)) 
     {
         if (entry.is_regular_file()) {
             std::string filename = entry.path().filename().string();
-
-            //extension matching
             std::string extension = filename.substr(filename.find_last_of("."));
-
-            bool allowed = std::find(fileExtensions.begin(), fileExtensions.end(), extension) != fileExtensions.end();
-            if (!allowed)  { continue; }
-
-            //appid parsing
             size_t underscorePos = filename.find("_");
 
-            if (underscorePos == std::string::npos) { continue; }
+            if (std::find(fileExtensions.begin(), fileExtensions.end(), extension) == fileExtensions.end()) {
+                continue;
+            }
+
+            if (underscorePos == std::string::npos) {
+                continue;
+            }
 
             std::string appIdStr = filename.substr(0, underscorePos);
 
-            if (!std::all_of(appIdStr.begin(), appIdStr.end(), ::isdigit)) { continue; }
+            if (!std::all_of(appIdStr.begin(), appIdStr.end(), ::isdigit)) {
+                continue;
+            }
 
             int appId = std::stoi(appIdStr);
             appIds.push_back(appId);
